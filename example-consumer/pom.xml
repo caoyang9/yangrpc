@@ -11,7 +11,7 @@
     <dependencies>
         <dependency>
             <groupId>com.yang</groupId>
-            <artifactId>yang-rpc-easy</artifactId>
+            <artifactId>yang-rpc-core</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
         <dependency>
