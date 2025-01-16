@@ -1,5 +1,7 @@
 package com.yang.yangrpc.config;
 
+import com.yang.yangrpc.serializer.Serializer;
+import com.yang.yangrpc.serializer.SerializerKeys;
 import lombok.Data;
 
 /**
@@ -34,4 +36,9 @@ public class RpcConfig {
      * 模拟调用开关
      */
     private boolean mock = false;
+
+    /**
+     * 序列化器
+     */
+    private String serializer = SerializerKeys.JDK;
 }

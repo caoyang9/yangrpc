@@ -1,10 +1,11 @@
 package com.yang.yangrpc.server;
 
+import com.yang.yangrpc.RPCApplication;
 import com.yang.yangrpc.model.RpcRequest;
 import com.yang.yangrpc.model.RpcResponse;
 import com.yang.yangrpc.registry.LocalRegistry;
-import com.yang.yangrpc.serializer.JdkSerializer;
 import com.yang.yangrpc.serializer.Serializer;
+import com.yang.yangrpc.serializer.SerializerFactory;
 import io.vertx.core.Handler;
 import io.vertx.core.buffer.Buffer;
 import io.vertx.core.http.HttpServerRequest;
@@ -12,7 +13,6 @@ import io.vertx.core.http.HttpServerResponse;
 
 import java.io.IOException;
 import java.lang.reflect.Method;
-import java.time.LocalDateTime;
 
 /**
  * Created by CaoYang in 2025-01-10
@@ -22,8 +22,8 @@ public class HttpServerHandler implements Handler<HttpServerRequest> {
     @Override
     public void handle(HttpServerRequest request) {
         // 指定序列化器
-        final Serializer serializer = new JdkSerializer();
-
+//        final Serializer serializer = new JdkSerializer();
+        Serializer serializer = SerializerFactory.getInstance(RPCApplication.getRpcConfig().getSerializer());
         // 记录日志
         System.out.println("Received request: " + request.method() + " " + request.uri());
 

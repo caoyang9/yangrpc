@@ -1,4 +1,6 @@
-package com.yang.yangrpc.serializer;
+package com.yang.yangrpc.serializer.impl;
+
+import com.yang.yangrpc.serializer.Serializer;
 
 import java.io.*;
 
@@ -6,7 +8,7 @@ import java.io.*;
  * Created by CaoYang in 2025-01-10
  * JDK序列化器
  */
-public class JdkSerializer implements Serializer{
+public class JdkSerializer implements Serializer {
 
     /**
      * 序列化

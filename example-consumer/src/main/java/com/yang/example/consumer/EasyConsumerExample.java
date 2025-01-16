@@ -3,6 +3,7 @@ package com.yang.example.consumer;
 import com.yang.example.common.model.User;
 import com.yang.example.common.service.UserService;
 import com.yang.yangrpc.proxy.ServiceProxyFactory;
+import com.yang.yangrpc.serializer.SerializerFactory;
 
 import java.time.LocalDateTime;
 

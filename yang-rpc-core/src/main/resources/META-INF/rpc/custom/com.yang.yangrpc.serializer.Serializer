@@ -1,0 +1,2 @@
+json=com.yang.yangrpc.serializer.impl.JsonSerializer
+kryo=com.yang.yangrpc.serializer.impl.KryoSerializer
