@@ -27,6 +27,7 @@ public class ServiceProxy implements InvocationHandler {
      */
     @Override
     public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
+        System.out.println("我被自动调用了 " + this);
         // 指定序列化器
 //        Serializer serializer = new JdkSerializer();
         Serializer serializer = SerializerFactory.getInstance(RPCApplication.getRpcConfig().getSerializer());

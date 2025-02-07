@@ -10,6 +10,7 @@ import com.yang.yangrpc.spi.SpiLoader;
 public class SerializerFactory {
 
     static {
+        System.out.println("==============");
         SpiLoader.load(Serializer.class);
     }
 

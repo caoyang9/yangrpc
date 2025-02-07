@@ -3,9 +3,6 @@ package com.yang.example.consumer;
 import com.yang.example.common.model.User;
 import com.yang.example.common.service.UserService;
 import com.yang.yangrpc.proxy.ServiceProxyFactory;
-import com.yang.yangrpc.serializer.SerializerFactory;
-
-import java.time.LocalDateTime;
 
 /**
  * Created by CaoYang in 2025-01-10
@@ -27,7 +24,7 @@ public class EasyConsumerExample {
         } else {
             System.out.println("user == null");
         }
-        long number = userService.getNumber();
+        int number = userService.getNumber();
         System.out.println(number);
     }
 }

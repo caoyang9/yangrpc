@@ -19,7 +19,7 @@ public interface UserService {
      * 获取数字
      * @return
      */
-    default short getNumber(){
+    default int getNumber(){
         return 1;
     }
 }
