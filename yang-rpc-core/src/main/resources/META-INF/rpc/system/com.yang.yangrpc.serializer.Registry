@@ -1,0 +1,1 @@
+etcd=com.yang.yangrpc.registry.EtcdRegistry

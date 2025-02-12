@@ -1,7 +1,10 @@
 package com.yang.yangrpc;
 
+import com.yang.yangrpc.config.RegisterConfig;
 import com.yang.yangrpc.config.RpcConfig;
 import com.yang.yangrpc.constant.RpcConstant;
+import com.yang.yangrpc.registry.Registry;
+import com.yang.yangrpc.registry.RegistryFactory;
 import com.yang.yangrpc.utils.ConfigUtils;
 import lombok.extern.slf4j.Slf4j;
 
@@ -23,6 +26,12 @@ public class RPCApplication {
     public static void init(RpcConfig newRpcConfig){
         rpcConfig = newRpcConfig;
         log.info("RPC init, config = {}", newRpcConfig.toString());
+
+        // 注册中心初始化
+        RegisterConfig registerConfig = rpcConfig.getRegisterConfig();
+        Registry registry = RegistryFactory.getInstance(registerConfig.getRegistry());
+        registry.init(registerConfig);
+        log.info("registry init, config = {}", registerConfig);
     }
 
     /**
