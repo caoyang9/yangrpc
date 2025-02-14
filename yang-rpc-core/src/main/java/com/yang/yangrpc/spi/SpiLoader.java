@@ -99,6 +99,7 @@ public class SpiLoader {
         // 扫描路径，用户自定义的SPI优先级高于系统SPI
         Map<String, Class<?>> keyClassMap = new HashMap<>();
         for(String scanDir : SCAN_DIRS){
+            String s = scanDir + loadClass.getName();
             List<URL> resources = ResourceUtil.getResources(scanDir + loadClass.getName());
             // 读取每个资源文件
             for(URL resource : resources){

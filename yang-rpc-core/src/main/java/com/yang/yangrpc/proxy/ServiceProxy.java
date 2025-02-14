@@ -13,6 +13,7 @@ import com.yang.yangrpc.registry.Registry;
 import com.yang.yangrpc.registry.RegistryFactory;
 import com.yang.yangrpc.serializer.Serializer;
 import com.yang.yangrpc.serializer.SerializerFactory;
+import lombok.extern.slf4j.Slf4j;
 
 import java.io.IOException;
 import java.lang.reflect.InvocationHandler;
@@ -24,6 +25,8 @@ import java.util.List;
  * Created by CaoYang in 2025-01-10
  * JDK动态代理
  */
+
+@Slf4j
 public class ServiceProxy implements InvocationHandler {
 
     /**
@@ -70,6 +73,7 @@ public class ServiceProxy implements InvocationHandler {
             // 发送请求
             // todo 注意，这里地址被硬编码了（需要使用注册中心和服务发现机制解决）
             System.out.println(LocalDateTime.now() + " 代理对象发起远程调用");
+            String serviceAddress = selectServiceMetaInfo.getServiceAddress();
             try (HttpResponse httpResponse = HttpRequest.post(selectServiceMetaInfo.getServiceAddress())
                     .body(bodyBytes)
                     .execute()) {
