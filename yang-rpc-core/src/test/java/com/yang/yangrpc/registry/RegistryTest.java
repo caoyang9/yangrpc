@@ -69,4 +69,11 @@ public class RegistryTest {
         Assert.assertNotNull(serviceMetaInfoList);
     }
 
+    @Test
+    public void heartBeat() throws Exception {
+        register();
+        // 阻塞1分钟
+        Thread.sleep(60 * 1000L);
+    }
+
 }

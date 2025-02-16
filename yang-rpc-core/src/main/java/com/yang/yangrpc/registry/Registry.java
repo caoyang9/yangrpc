@@ -3,7 +3,9 @@ package com.yang.yangrpc.registry;
 import com.yang.yangrpc.config.RegisterConfig;
 import com.yang.yangrpc.model.ServiceMetaInfo;
 
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 import java.util.concurrent.ExecutionException;
 
 /**
@@ -43,4 +45,9 @@ public interface Registry {
      * 服务销毁
      */
     void destroy();
+
+    /**
+     * 心跳检测
+     */
+    void heartBeat();
 }
