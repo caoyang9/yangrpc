@@ -139,7 +139,7 @@ public class EtcdRegistry implements Registry{
     }
 
     /**
-     * 心跳检测
+     * 服务心跳检测
      */
     @Override
     public void heartBeat() {
